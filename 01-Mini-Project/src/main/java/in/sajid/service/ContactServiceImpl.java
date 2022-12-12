@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import in.sajid.binding.Contact;
 import in.sajid.repository.ContactRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ContactServiceImpl implements ContactService {
 	
 	@Autowired
@@ -31,7 +33,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public Contact getContactById(Integer contactId) {
-Optional<Contact> findById = repo.findById(contactId);
+                Optional<Contact> findById = repo.findById(contactId);
 		
 		if(findById.isPresent()) {
 			return findById.get();
